@@ -19,7 +19,7 @@ class HomeController extends Controller
         return view('contato');
     }
 
-    public function usuario($codigo){
+    public function usuario($codigoUsuario){
 
         $vendas = [];
         
@@ -43,7 +43,7 @@ class HomeController extends Controller
 
 
         return view('usuario', [
-            'codigo' => $codigo,
+            'codigoUsuario' => $codigoUsuario,
             'usuarioLogado' => 2,
             'venda' => $venda
         ]);
