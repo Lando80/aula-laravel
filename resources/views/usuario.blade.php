@@ -15,15 +15,37 @@
 
     </ul>
 
-    <h1>Usuário codigo: <?php echo $codigo ?> </h1>
+    <h1>Usuário codigo: {{$codigo}} </h1>
     
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, accusamus.</p>
 
     <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, doloribus labore. Cumque molestias praesentium officiis tenetur vel odit eligendi voluptas corporis eum, illum officia repellat impedit veniam harum explicabo dolores!
     </p>
+    @if ($usuarioLogado == 1)
+        <p>Usuario está logado</p>
+    @elseif ($usuarioLogado == 2)
+        <p>Usuário administrador está logado</p>
+    @else
+        <p>Usuário não está logado</p>
+    @endif
 
-
+    <table>
+        <tr>
+            <th>Código</th>
+            <th>Descrição</th>
+            <th>Data</th>
+            <th>Comprador</th>
+            <th>Valor</th>
+        </tr>
+        <tr>
+            <td>{{ $venda->codigo }}</td>
+            <td>{{ $venda->descricao }}</td>
+            <td>{{ $venda->data }}</td>
+            <td>{{ $venda->comprador }}</td>
+            <td>{{ $venda->valor }}</td>
+        </tr>
+    </table>
 
 </body>
 </html>

@@ -7,12 +7,12 @@
     <title>Document</title>
 </head>
 <body>
+
     <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/sobre-nos">Sobre Nós</a></li>
         <li><a href="/contato">Contato</a></li>
         <li><a href="/usuario/1">Usuario</a></li>
-
 
     </ul>
 
