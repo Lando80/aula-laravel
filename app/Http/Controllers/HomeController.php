@@ -39,13 +39,39 @@ class HomeController extends Controller
         $venda->comprador = "Maria";
         $venda->data = "18/11/2022";
 
+        $vendas[] = $venda;
 
+        $venda  = new Venda();
+        $venda->codigo = 3;
+        $venda->valor = 7.5;
+        $venda->descricao = "Feijão";
+        $venda->comprador = "José";
+        $venda->data = "18/11/2022";
 
+        $vendas[] = $venda;
+
+        $venda  = new Venda();
+        $venda->codigo = 4;
+        $venda->valor = 6;
+        $venda->descricao = "Sardinha";
+        $venda->comprador = "José";
+        $venda->data = "18/11/2022";
+
+        $vendas[] = $venda;
+
+        $venda  = new Venda();
+        $venda->codigo = 5;
+        $venda->valor = 10;
+        $venda->descricao = "Qualquer coisa";
+        $venda->comprador = "Maria";
+        $venda->data = "20/11/2022";
+
+        $vendas[] = $venda;
 
         return view('usuario', [
             'codigoUsuario' => $codigoUsuario,
             'usuarioLogado' => 2,
-            'venda' => $venda
+            'vendas' => $vendas
         ]);
     }
 }

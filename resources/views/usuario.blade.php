@@ -30,22 +30,14 @@
         <p>Usuário não está logado</p>
     @endif
 
-    <table>
-        <tr>
-            <th>Código</th>
-            <th>Descrição</th>
-            <th>Data</th>
-            <th>Comprador</th>
-            <th>Valor</th>
-        </tr>
-        <tr>
-            <td>{{ $venda->codigo }}</td>
-            <td>{{ $venda->descricao }}</td>
-            <td>{{ $venda->data }}</td>
-            <td>{{ $venda->comprador }}</td>
-            <td>{{ $venda->valor }}</td>
-        </tr>
-    </table>
-
+    <x-formulario>
+        <x-slot:outroslot>
+            Outro texto de ajuda
+        </x-slot:outroslot>
+        
+        <p>Digite seu nome para acessar o sistema</p>
+        <img src="https://img.freepik.com/vetores-premium/enfermeira-fofa-segurando-a-injecao-em-boa-pose_123847-1472.jpg?w=2000" alt="" style="width: 150px">
+    </x-formulario>
+    
 </body>
 </html>
