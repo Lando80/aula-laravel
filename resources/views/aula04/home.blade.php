@@ -7,13 +7,12 @@
     <title>Página Inicial</title>
 </head>
 <body>
+    
     <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/sobre-nos">Sobre Nós</a></li>
-        <li><a href="/contato">Contato</a></li>
-        <li><a href="/usuario/1">Usuario</a></li>
-
-
+        <li><a href="/aula04/">Home</a></li>
+        <li><a href="/aula04/sobre-nos/">Sobre Nós</a></li>
+        <li><a href="/aula04/contato/">Contato</a></li>
+        <li><a href="/aula04/usuario/1">Usuario</a></li>
     </ul>
 
     <h1>Home</h1>
@@ -25,6 +24,6 @@
     </p>
 
 
-
+<a href="/">Início</a>
 </body>
 </html>

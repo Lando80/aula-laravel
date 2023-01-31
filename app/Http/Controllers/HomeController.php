@@ -4,20 +4,49 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Venda;
+use Illuminate\Support\ViewErrorBag;
 
 class HomeController extends Controller
 {
     public function index(){
-        return view('home');
+        return view('index', [
+            'erro' => false
+        ]);
     }
 
     public function sobrenos(){
-        return view('sobre-nos');
+        return view('sobre-nos', [
+            'erro' => true
+        ]);
     }
 
     public function contato(){
         return view('contato');
     }
+
+    public function bemvindo(Request $request){
+        return view('bem-vindo', [
+            'nome' => $request->nome,
+            'idade' => $request->idade
+        ]);
+    }
+
+
+
+
+// Codigos da aula 04
+    public function aula04home(){
+        return view('aula04.home');
+    }
+
+    public function aula04sobrenos(){
+        return view('aula04.sobre-nos');
+    }
+
+    public function aula04contato(){
+        return view('aula04.contato');
+    }
+
 
     public function usuario($codigoUsuario){
 
@@ -68,7 +97,7 @@ class HomeController extends Controller
 
         $vendas[] = $venda;
 
-        return view('usuario', [
+        return view('aula04.usuario', [
             'codigoUsuario' => $codigoUsuario,
             'usuarioLogado' => 2,
             'vendas' => $vendas

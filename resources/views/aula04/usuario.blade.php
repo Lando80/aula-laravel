@@ -7,12 +7,12 @@
     <title>Página do Usuário</title>
 </head>
 <body>
-    <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/sobre-nos">Sobre Nós</a></li>
-        <li><a href="/contato">Contato</a></li>
-        <li><a href="/usuario/1">Usuario</a></li>
 
+    <ul>
+        <li><a href="/aula04/">Home</a></li>
+        <li><a href="/aula04/sobre-nos/">Sobre Nós</a></li>
+        <li><a href="/aula04/contato/">Contato</a></li>
+        <li><a href="/aula04/usuario/1">Usuario</a></li>
     </ul>
 
     <h1>Usuário codigo: {{$codigoUsuario}} </h1>
@@ -38,6 +38,7 @@
         <p>Digite seu nome para acessar o sistema</p>
         <img src="https://img.freepik.com/vetores-premium/enfermeira-fofa-segurando-a-injecao-em-boa-pose_123847-1472.jpg?w=2000" alt="" style="width: 150px">
     </x-formulario>
-    
+    <br><br>
+    <a href="/">Início</a>    
 </body>
 </html>
