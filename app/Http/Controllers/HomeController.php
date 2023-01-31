@@ -2,38 +2,50 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Produto;
 use Illuminate\Http\Request;
 use App\Models\Venda;
 use Illuminate\Support\ViewErrorBag;
 
 class HomeController extends Controller
 {
-    public function index(){
-        return view('index', [
+
+public function index()
+{
+    $produtos = Produto::all();
+    return view('produtos', [
+        'produtos' => $produtos
+    ]);
+}
+
+
+
+
+public function sobrenos(){
+    return view('sobre-nos', [
+        'erro' => true
+    ]);
+}
+
+public function contato(){
+    return view('contato');
+}
+
+
+//Codigos da aula 05
+    public function aula05index(){
+        return view('aula05.index', [
             'erro' => false
         ]);
     }
 
-    public function sobrenos(){
-        return view('sobre-nos', [
-            'erro' => true
-        ]);
-    }
-
-    public function contato(){
-        return view('contato');
-    }
-
-    public function bemvindo(Request $request){
-        return view('bem-vindo', [
+    public function aula05bemvindo(Request $request){
+        return view('aula05.bem-vindo', [
+            'erro' => false,
             'nome' => $request->nome,
             'idade' => $request->idade
         ]);
     }
-
-
-
-
 // Codigos da aula 04
     public function aula04home(){
         return view('aula04.home');
@@ -47,7 +59,7 @@ class HomeController extends Controller
         return view('aula04.contato');
     }
 
-
+//Codigos da aula 03
     public function usuario($codigoUsuario){
 
         $vendas = [];

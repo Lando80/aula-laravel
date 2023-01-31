@@ -22,6 +22,7 @@
               <a class="nav-link" href="/sobre-nos">Sobre Nós</a>
               <a class="nav-link" href="/contato">Contato</a>
               <a class="nav-link" href="/aula04">Aula 04</a>
+              <a class="nav-link" href="/aula05">Aula 05</a>
             </div>
           </div>
         </div>
