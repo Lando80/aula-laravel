@@ -1,4 +1,4 @@
-<x-layout title="Bem-vindo">
+<x-layout title="Produtos - Aula 06">
 
     <table>
         <tr>
@@ -6,6 +6,7 @@
             <th>Nome</th>
             <th>Valor</th>
             <th>Descrição</th>
+            <th>Categoria</th>
         </tr>
         @foreach ($produtos as $produto)
             <tr>
@@ -13,6 +14,7 @@
                 <td>{{ $produto->nome }}</td>
                 <td>{{ $produto->preco }}</td>
                 <td>{{ $produto->descricao }}</td>
+                <td>{{ $produto->categoria->nome }}</td>
             </tr>
         @endforeach
     </table>

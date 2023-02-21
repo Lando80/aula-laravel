@@ -1,4 +1,4 @@
-<x-layout title="Página inicial">
+<x-layout title="Página inicial - Aula 05">
     <h1>Bem-vindo ao meu site</h1>
 
     @if ($erro == true)

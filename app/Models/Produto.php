@@ -14,4 +14,9 @@ class Produto extends Model
     protected $guarded = [
         'id', 'create_at', 'update_at'
     ];
+
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class);
+    }
 }

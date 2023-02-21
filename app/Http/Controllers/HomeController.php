@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Aula;
+use App\Models\Categoria;
 use App\Models\Produto;
 use Illuminate\Http\Request;
 use App\Models\Venda;
@@ -12,25 +14,50 @@ class HomeController extends Controller
 
 public function index()
 {
+    $aulas = Aula::all();
+    return view('home', [
+        'aulas' => $aulas
+    ]);
+}
+
+
+
+
+// public function sobrenos(){
+//     return view('sobre-nos', [
+//         'erro' => true
+//     ]);
+// }
+
+// public function contato(){
+//     return view('contato');
+// }
+
+//Codigos da aula 07
+public function aula07produtos()
+{
     $produtos = Produto::all();
-    return view('produtos', [
+    return view('aula07.produtos', [
         'produtos' => $produtos
     ]);
 }
-
-
-
-
-public function sobrenos(){
-    return view('sobre-nos', [
-        'erro' => true
+public function aula07categorias()
+{
+    $categorias = Categoria::all();
+    return view('aula07.categorias', [
+        'categorias' => $categorias
     ]);
 }
 
-public function contato(){
-    return view('contato');
-}
 
+//Codigos da aula 06
+public function aula06index()
+{
+    $produtos = Produto::all();
+    return view('aula06.produtos', [
+        'produtos' => $produtos
+    ]);
+}
 
 //Codigos da aula 05
     public function aula05index(){
