@@ -29,7 +29,6 @@
                             <a href="" class="btn btn-danger btn-sm">Excluir</a>
                         </td>
                         <td>{{ $produto->id }}</td>
-                        <td>{{ $produto->id }}</td>
                         <td>{{ $produto->nome }}</td>
                         <td class="text-end">R$ {{ number_format($produto->preco, 2, ",",".")}}</td>
                         <td>

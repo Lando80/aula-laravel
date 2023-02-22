@@ -13,7 +13,7 @@
                 
                 <div class="mb-3">
                     <label for="preco">Preço:</label><span class="text-danger">*</span>
-                    <input type="number" name="preco" required="required" class="form-control">
+                    <input type="number" step="any" name="preco" required="required" class="form-control">
                 </div>
 
                 <div class="mb-3">

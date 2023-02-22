@@ -10,7 +10,7 @@ class ProdutoController extends Controller
 {
     public function index()
     {
-        $produtos = Produto::paginate(2);
+        $produtos = Produto::paginate(5);
 
         // dd($produtos);
         return view('produto.index', [
