@@ -25,16 +25,16 @@ Route::get('/produtos', [ProdutoController::class, 'index']);
 Route::get('/produtos/create', [ProdutoController::class, 'create']);
 
 //Exibir um produto expecíficos
-Route::get('produtos/{id}', [ProdutoController::class, 'edit']);
+Route::get('produtos/{produto}', [ProdutoController::class, 'edit']);
 
 //Criar produtos
 Route::post('/produtos', [ProdutoController::class, 'store']);
 
 //Atualizar um produto expecifico
-Route::put('/produtos/{id}', [ProdutoController::class, 'update']);
+Route::put('/produtos/{produto}', [ProdutoController::class, 'update']);
 
 //Excluir um produto expecífico
-Route::delete('/produtos/{id}', [ProdutoController::class, 'destroy']);
+Route::delete('/produtos/{produto}', [ProdutoController::class, 'destroy']);
 
 
 
@@ -56,3 +56,12 @@ Route::get('/aula04/sobre-nos', [HomeController::class, 'aula04sobrenos']);
 Route::get('/aula04/contato', [HomeController::class, 'aula04contato']);
 Route::get('/aula04/usuario/{codigo}/', [HomeController::class, 'usuario']);
 
+//Rota aula html
+Route::get('/html', function(){
+    return view('html.index');
+});
+
+//Rota aula projeto1 (javascript)
+Route::get('/projeto1', function(){
+    return view('html.projeto1');
+});

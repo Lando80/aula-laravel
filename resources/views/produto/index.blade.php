@@ -2,19 +2,16 @@
     <div class="container mt-5 mb-5">
         <h1>Listagem de produtos</h1>
 
-        @if (session('sucesso'))
-            <div class="alert alert-success">
-                {{ session('sucesso') }}
-            </div>
-        @endif
-        
-        <div class="mt-5">
+        @include('components.alert')  
+            
+            
+        <div class="mt-3 mb-3">
             <a href="/produtos/create" class="btn btn-primary">Criar Produto</a>
         </div>
         
         <div>
             <table class="table table-hover">
-                <tr>
+                <tr style="background-color: #d9d9d9">
                     <th>Ações</th>
                     <th>Id</th>
                     <th>Nome</th>
@@ -23,10 +20,20 @@
                     <th>Categoria</th>
                 </tr>
                 @foreach ($produtos as $produto)
-                    <tr>
+                    @if ($produto->status == 'A')
+                        <tr class="verde">
+                    @elseif (($produto->status == 'I'))
+                        <tr class="vermelho">
+                    @else
+                        <tr>
+                    @endif    
                         <td>
-                            <a href="" class="btn btn-warning btn-sm">Editar</a>
-                            <a href="" class="btn btn-danger btn-sm">Excluir</a>
+                            <a href="/produtos/{{ $produto->id }}" class="btn btn-warning btn-sm" >Editar</a>
+                            <form action="/produtos/{{ $produto->id }}" class="d-inline-block" method="POST" onsubmit="confirmaExclusao(event)">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger btn-sm">Exluir</button>
+                            </form>
                         </td>
                         <td>{{ $produto->id }}</td>
                         <td>{{ $produto->nome }}</td>
@@ -49,3 +56,13 @@
     
     
 </x-layout>
+
+<script>
+    function confirmaExclusao(event){
+        event.preventDefault();
+
+        if (confirm("Tem certeza que deseja excluir?")) {
+            event.target.submit();
+        }
+    }
+</script>
